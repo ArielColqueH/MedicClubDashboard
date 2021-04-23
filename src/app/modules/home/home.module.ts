@@ -19,6 +19,8 @@ import { DashboardComponent } from "./pages/home/dashboard/dashboard.component";
 import { TiendasComponent } from "./pages/home/tiendas/tiendas.component";
 import { ConfiguracionesComponent } from "./pages/home/configuraciones/configuraciones.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { IngresosCategoriaComponent } from "./pages/home/dashboard/ingresos-categoria/ingresos-categoria.component";
+import { NgxChartsModule } from "@swimlane/ngx-charts";
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     DashboardComponent,
     TiendasComponent,
     ConfiguracionesComponent,
+    IngresosCategoriaComponent,
   ],
   imports: [
     CommonModule,
@@ -44,6 +47,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
+    NgxChartsModule,
   ],
 })
 export class HomeModule {}
