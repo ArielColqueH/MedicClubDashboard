@@ -19,9 +19,7 @@ export class IngresosCategoriaComponent implements OnInit {
   showYAxis = true;
   gradient = false;
   showLegend = false;
-  showXAxisLabel = true;
   xAxisLabel = "Categoria";
-  showYAxisLabel = true;
   yAxisLabel = "Ingresos";
   xLabelRotated = true;
 
