@@ -2,9 +2,7 @@
 .p-2 {
   padding: 2rem;
 }
-
 //MARGINS
-
 .mt-1 {
   margin-top: 1rem;
 }
@@ -19,4 +17,16 @@
 }
 .mx-1 {
   margin: 0 1rem;
+}
+
+.u-display-flex {
+  // background-color: red;
+  display: flex;
+  align-items: center;
+}
+.u-2-of-3 {
+  flex: 0 1 66.7%;
+}
+.u-1-of-3 {
+  flex: 0 1 33.3%;
 }

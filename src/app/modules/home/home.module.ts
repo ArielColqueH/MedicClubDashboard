@@ -21,6 +21,11 @@ import { ConfiguracionesComponent } from "./pages/home/configuraciones/configura
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { IngresosCategoriaComponent } from "./pages/home/dashboard/ingresos-categoria/ingresos-categoria.component";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { IngresosCategoriaMesesComponent } from './pages/home/dashboard/ingresos-categoria-meses/ingresos-categoria-meses.component';
+import { CategoriasImportantesComponent } from './pages/home/dashboard/categorias-importantes/categorias-importantes.component';
+import { TopMedicosComponent } from './pages/home/dashboard/top-medicos/top-medicos.component';
+import { AtencionGeneroComponent } from './pages/home/dashboard/atencion-genero/atencion-genero.component';
+import { TopPacientesComponent } from './pages/home/dashboard/top-pacientes/top-pacientes.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +41,11 @@ import { NgxChartsModule } from "@swimlane/ngx-charts";
     TiendasComponent,
     ConfiguracionesComponent,
     IngresosCategoriaComponent,
+    IngresosCategoriaMesesComponent,
+    CategoriasImportantesComponent,
+    TopMedicosComponent,
+    AtencionGeneroComponent,
+    TopPacientesComponent,
   ],
   imports: [
     CommonModule,
