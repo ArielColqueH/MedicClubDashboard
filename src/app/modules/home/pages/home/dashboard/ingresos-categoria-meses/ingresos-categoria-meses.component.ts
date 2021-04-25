@@ -19,6 +19,7 @@ export class IngresosCategoriaMesesComponent implements OnInit {
   showYAxisLabel: boolean = true;
   showXAxisLabel: boolean = true;
   timeline: boolean = true;
+  xLabelRotated = true;
 
   colorScheme = {
     domain: ["#3B28CC", "#2667FF", "#3F8EFC", "#87BFFF", "#A594F9"],
@@ -27,9 +28,7 @@ export class IngresosCategoriaMesesComponent implements OnInit {
   constructor() {
     Object.assign(this, { multi });
   }
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
+  ngOnInit() {}
 
   onSelect(data): void {
     console.log("Item clicked", JSON.parse(JSON.stringify(data)));
