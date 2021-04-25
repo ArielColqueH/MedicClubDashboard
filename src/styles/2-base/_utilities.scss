@@ -45,7 +45,6 @@
 .mr-5 {
   margin-right: 5rem;
 }
-
 .u-display-flex {
   // background-color: red;
   display: flex;
@@ -59,4 +58,9 @@
 }
 .u-1-of-3 {
   flex: 0 1 33.3%;
+}
+.u-flex--space-between {
+  display: flex;
+  justify-content: space-between;
+  //background-color: red;
 }

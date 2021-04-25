@@ -1,0 +1,14 @@
+.icon--square {
+  background-color: $color-primary;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 1rem;
+}
+.icon__img--square {
+  background: url(./../assets/images/tooth.svg);
+  color: $color-primary-white;
+  height: 6rem;
+  width: 6rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
