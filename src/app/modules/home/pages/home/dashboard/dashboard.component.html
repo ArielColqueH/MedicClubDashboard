@@ -5,7 +5,9 @@
         <p class="graphic-container__title my-2">
           Ingresos por categoria por mes
         </p>
-        <app-ingresos-categoria-meses></app-ingresos-categoria-meses>
+        <app-ingresos-categoria-meses
+          class="graphic-container__graph"
+        ></app-ingresos-categoria-meses>
       </div>
     </div>
     <div class="u-1-of-3">
@@ -13,20 +15,27 @@
         <p class="graphic-container__title my-2">
           Ingresos por categoria totales
         </p>
-        <app-ingresos-categoria></app-ingresos-categoria>
+        <app-ingresos-categoria
+          class="graphic-container__graph"
+        ></app-ingresos-categoria>
       </div>
     </div>
   </div>
-  <p class="graphic-container__title my-2 mb-3">Categorias mas importantes</p>
-  <div *ngFor="let item of impCategory" class="u-flex--space-between">
-    <app-categorias-importantes></app-categorias-importantes>
+  <p class="graphic-container__title my-2">Categorias mas importantes</p>
+  <div class="u-flex--space-between mb-3">
+    <app-categorias-importantes
+      *ngFor="let itemci of impCategory"
+      [dataci]="itemci"
+    ></app-categorias-importantes>
   </div>
 
   <div class="u-display-flex mb-3">
     <div class="u-1-of-2 mr-3">
       <div class="graphic-container">
         <p class="graphic-container__title my-2">Atencion por Genero</p>
-        <app-atencion-genero></app-atencion-genero>
+        <app-atencion-genero
+          class="graphic-container__graph"
+        ></app-atencion-genero>
       </div>
     </div>
     <div class="u-1-of-2">
@@ -34,7 +43,15 @@
         <p class="graphic-container__title my-2">
           Top Pacientes mas concurridos
         </p>
-        <app-ingresos-categoria></app-ingresos-categoria>
+        <div class="category-important-title mb-1">
+          <div class="category-important-title__avatar">Avatar</div>
+          <div class="category-important-title__nombre">Nombre Completo</div>
+          <div class="category-important-title__citas">Citas</div>
+        </div>
+        <app-top-pacientes
+          *ngFor="let itempatient of patients"
+          [datapatient]="itempatient"
+        ></app-top-pacientes>
       </div>
     </div>
   </div>

@@ -1,1 +1,17 @@
-<p>top-pacientes works!</p>
+<div class="pacientes-concurridos">
+  <div
+    class="pacientes-concurridos__img"
+    [ngStyle]="{ 'background-image': 'url(' + datapatient.image + ')' }"
+  ></div>
+  <div class="pacientes-concurridos__nombre">
+    {{ datapatient.first_name }} {{ datapatient.last_name }}
+  </div>
+  <div class="pacientes-concurridos__citas">
+    <div class="pacientes-concurridos__citas--icono">
+      <mat-icon>edit</mat-icon>
+    </div>
+    <div class="pacientes-concurridos__citas--texto">
+      {{ datapatient.appointments }}
+    </div>
+  </div>
+</div>

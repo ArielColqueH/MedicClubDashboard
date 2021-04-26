@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule } from "@angular/core";
+import { Component, OnInit, NgModule, Input } from "@angular/core";
 import {} from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
