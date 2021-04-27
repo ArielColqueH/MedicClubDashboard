@@ -1,1 +1,39 @@
-<p>top-medicos works!</p>
+<div class="doctores-concurridos">
+  <div
+    class="doctores-concurridos__img"
+    [ngStyle]="{ 'background-image': 'url(' + datadoctor.image + ')' }"
+  ></div>
+  <div class="doctores-concurridos__nombre">
+    {{ datadoctor.first_name }} {{ datadoctor.last_name }}
+  </div>
+  <div class="doctores-concurridos__especialidad">
+    {{ datadoctor.specialty }}
+  </div>
+  <div class="doctores-concurridos__puntuacion">
+    <div class="doctores-concurridos__puntuacion--icon">
+      <mat-icon>star</mat-icon>
+    </div>
+    <div class="doctores-concurridos__puntuacion--texto">
+      {{ datadoctor.stars }}
+    </div>
+  </div>
+  <div class="doctores-concurridos__pacientes">
+    <div class="doctores-concurridos__pacientes--icon">
+      <mat-icon>people</mat-icon>
+    </div>
+    <div class="doctores-concurridos__pacientes--texto">
+      {{ datadoctor.patients }}
+    </div>
+  </div>
+  <div class="doctores-concurridos__citas-atendidas">
+    <div class="doctores-concurridos__citas-atendidas--barra">
+      <mat-progress-bar
+        mode="determinate"
+        value="{{ datadoctor.percentage_appointments }}"
+      ></mat-progress-bar>
+    </div>
+    <div class="doctores-concurridos__citas-atendidas--texto">
+      {{ datadoctor.percentage_appointments }} %
+    </div>
+  </div>
+</div>

@@ -28,7 +28,31 @@
       [dataci]="itemci"
     ></app-categorias-importantes>
   </div>
-
+  <div class="graphic-container mb-3">
+    <p class="graphic-container__title my-2">Top Medicos por especialidad</p>
+    <div class="category-important-title-top-medics mb-1">
+      <div class="category-important-title-top-medics__avatar">Avatar</div>
+      <div class="category-important-title-top-medics__nombre">
+        Nombre Completo
+      </div>
+      <div class="category-important-title-top-medics__especialidad">
+        Especialidad
+      </div>
+      <div class="category-important-title-top-medics__puntuacion">
+        Puntuacion
+      </div>
+      <div class="category-important-title-top-medics__pacientes">
+        Pacientes
+      </div>
+      <div class="category-important-title-top-medics__citas">
+        Citas Atendidas
+      </div>
+    </div>
+    <app-top-medicos
+      *ngFor="let itemdoctor of doctor"
+      [datadoctor]="itemdoctor"
+    ></app-top-medicos>
+  </div>
   <div class="u-display-flex mb-3">
     <div class="u-1-of-2 mr-3">
       <div class="graphic-container">

@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
+import { Doctor } from "src/app/core/http/class/doctor";
 
 @Component({
-  selector: 'app-top-medicos',
-  templateUrl: './top-medicos.component.html',
-  styleUrls: ['./top-medicos.component.scss']
+  selector: "app-top-medicos",
+  templateUrl: "./top-medicos.component.html",
+  styleUrls: ["./top-medicos.component.scss"],
 })
 export class TopMedicosComponent implements OnInit {
+  @Input() datadoctor: Doctor;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
