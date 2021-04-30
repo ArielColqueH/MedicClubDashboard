@@ -8,7 +8,11 @@ import { TiendasComponent } from "./modules/home/pages/home/tiendas/tiendas.comp
 import { LoginComponent } from "./modules/home/pages/login/login.component";
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "/dashboard" },
+  { path: "", pathMatch: "full", redirectTo: "/login" },
+  {
+    path: "login",
+    component: LoginComponent,
+  },
   {
     path: "",
     component: MainComponent,

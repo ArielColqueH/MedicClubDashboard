@@ -27,6 +27,7 @@ import { TopMedicosComponent } from "./pages/home/dashboard/top-medicos/top-medi
 import { AtencionGeneroComponent } from "./pages/home/dashboard/atencion-genero/atencion-genero.component";
 import { TopPacientesComponent } from "./pages/home/dashboard/top-pacientes/top-pacientes.component";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { MatInputModule } from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { MatProgressBarModule } from "@angular/material/progress-bar";
     MatToolbarModule,
     NgxChartsModule,
     MatProgressBarModule,
+    MatInputModule,
   ],
 })
 export class HomeModule {}

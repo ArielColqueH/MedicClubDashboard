@@ -15,12 +15,14 @@
 @import "3-component/title";
 @import "3-component/buttons";
 @import "3-component/icons";
+@import "3-component/inputs";
 //4 - LAYOUT
 //layout : header , footer ,sidebar, big portions of components
 @import "4-layout/header";
 @import "4-layout/sidenav";
 //5- PAGES
 @import "5-pages/main";
+@import "5-pages/login";
 //pages : css just for those pages specifically
 
 // @import "6-themes/";
