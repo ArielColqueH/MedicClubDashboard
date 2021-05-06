@@ -17,34 +17,50 @@
       <div class="login__divisor-detail--text">Ingresa tus datos</div>
       <div class="login__divisor-detail--line"></div>
     </div>
-    <form class="mb-3 login__form">
+    <form
+      class="mb-3 login__form"
+      (ngSubmit)="ingresar()"
+      [formGroup]="formVar"
+    >
       <mat-form-field class="login__width">
         <mat-label>Correo Electronico</mat-label>
-        <input type="email" matInput placeholder="Ex. pat@example.com" />
+        <input
+          type="email"
+          matInput
+          placeholder="Ex. pat@example.com"
+          [formControl]="correoFormControl"
+        />
         <mat-error
           *ngIf="
-            emailFormControl.hasError('email') &&
-            !emailFormControl.hasError('required')
+            correoFormControl.hasError('email') &&
+            !correoFormControl.hasError('required')
           "
         >
           Por favor ingrese un correo correcto
         </mat-error>
-        <mat-error *ngIf="emailFormControl.hasError('required')">
-          Email is <strong>required</strong>
+        <mat-error *ngIf="correoFormControl.hasError('required')">
+          El correo es<strong> requerido</strong>
         </mat-error>
       </mat-form-field>
       <br />
       <mat-form-field class="login__width">
         <mat-label>Contraseña</mat-label>
-        <input type="password" matInput placeholder="*****" />
-        <mat-error *ngIf="emailFormControl.hasError('password')">
+        <input
+          type="password"
+          matInput
+          placeholder="*****"
+          [formControl]="contraseniaFormControl"
+        />
+        <mat-error *ngIf="contraseniaFormControl.hasError('password')">
           Error al ingresar la contraseña
         </mat-error>
-        <mat-error *ngIf="emailFormControl.hasError('required')">
-          Email is <strong>required</strong>
+        <mat-error *ngIf="contraseniaFormControl.hasError('required')">
+          La constrseña es <strong> requerida</strong>
         </mat-error>
       </mat-form-field>
+      <button type="submit" mat-raised-button class="button button__primary">
+        Ingresar
+      </button>
     </form>
-    <button mat-raised-button class="button button__primary">Ingresar</button>
   </div>
 </div>

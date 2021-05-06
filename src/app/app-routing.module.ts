@@ -4,11 +4,11 @@ import { MainComponent } from "./layout/main/main.component";
 import { ConfiguracionesComponent } from "./modules/home/pages/home/configuraciones/configuraciones.component";
 import { DashboardComponent } from "./modules/home/pages/home/dashboard/dashboard.component";
 import { HomeComponent } from "./modules/home/pages/home/home.component";
-import { TiendasComponent } from "./modules/home/pages/home/tiendas/tiendas.component";
+import { RegistroComponent } from "./modules/home/pages/home/registro/registro.component";
 import { LoginComponent } from "./modules/home/pages/login/login.component";
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "/login" },
+  { path: "", pathMatch: "full", redirectTo: "/registro" },
   {
     path: "login",
     component: LoginComponent,
@@ -22,8 +22,8 @@ const routes: Routes = [
         component: DashboardComponent,
       },
       {
-        path: "tiendas",
-        component: TiendasComponent,
+        path: "registro",
+        component: RegistroComponent,
       },
       {
         path: "configuraciones",

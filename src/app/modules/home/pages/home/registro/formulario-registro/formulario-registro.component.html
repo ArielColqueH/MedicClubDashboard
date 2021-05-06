@@ -1,0 +1,71 @@
+<form class="register-form" (ngSubmit)="guardarDoctor()" [formGroup]="formVar">
+  <div class="register-form__title mb-3">Ingrese los datos de los doctores</div>
+  <br />
+  <mat-form-field class="register-form__input-width" appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input
+      type="text"
+      matInput
+      [formControl]="nombreFormControl"
+      placeholder="Ex. Juan"
+    />
+    <mat-error *ngIf="nombreFormControl.hasError('required')">
+      Ingresar el nombre es <strong>requerido</strong>
+    </mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field class="register-form__input-width" appearance="outline">
+    <mat-label>Apellido</mat-label>
+    <input
+      type="text"
+      matInput
+      [formControl]="apellidoFormControl"
+      placeholder="Ex. Mamani"
+    />
+    <mat-error *ngIf="apellidoFormControl.hasError('required')">
+      Ingresar el apellido es <strong>requerido</strong>
+    </mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field class="register-form__input-width" appearance="outline">
+    <mat-label>Fecha de nacimiento</mat-label>
+    <input
+      type="date"
+      matInput
+      [formControl]="fechaFormControl"
+      placeholder="Ex. Juan"
+    />
+    <mat-error *ngIf="fechaFormControl.hasError('required')">
+      Ingresar la fecha de nacimiento <strong>requerido</strong>
+    </mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill" class="register-form__combo-width">
+    <mat-label>Especialidad</mat-label>
+    <mat-select [formControl]="categoriaSeleccionada">
+      <mat-option
+        *ngFor="let item of doctorsSpecialty"
+        [value]="item.specialty_name"
+      >
+        {{ item.specialty_name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br />
+  <mat-radio-group
+    aria-label="Select an option"
+    class="register-form__radio-button-width mb-3"
+    [formControl]="sexoSeleccionado"
+  >
+    <mat-radio-button value="masculino">Masculino</mat-radio-button>
+    <mat-radio-button value="femenino">Femenino</mat-radio-button>
+  </mat-radio-group>
+  <br />
+  <button
+    type="submit"
+    mat-raised-button
+    class="button button__primary register-form__button"
+  >
+    Guardar nuevo doctor
+  </button>
+</form>

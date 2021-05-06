@@ -16,7 +16,6 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
 import { DashboardComponent } from "./pages/home/dashboard/dashboard.component";
-import { TiendasComponent } from "./pages/home/tiendas/tiendas.component";
 import { ConfiguracionesComponent } from "./pages/home/configuraciones/configuraciones.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { IngresosCategoriaComponent } from "./pages/home/dashboard/ingresos-categoria/ingresos-categoria.component";
@@ -28,6 +27,11 @@ import { AtencionGeneroComponent } from "./pages/home/dashboard/atencion-genero/
 import { TopPacientesComponent } from "./pages/home/dashboard/top-pacientes/top-pacientes.component";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatInputModule } from "@angular/material/input";
+import { RegistroComponent } from "./pages/home/registro/registro.component";
+import { FormularioRegistroComponent } from "./pages/home/registro/formulario-registro/formulario-registro.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatRadioModule } from "@angular/material/radio";
+import { MatSelectModule } from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -40,7 +44,6 @@ import { MatInputModule } from "@angular/material/input";
     MainComponent,
     SidenavComponent,
     DashboardComponent,
-    TiendasComponent,
     ConfiguracionesComponent,
     IngresosCategoriaComponent,
     IngresosCategoriaMesesComponent,
@@ -48,6 +51,8 @@ import { MatInputModule } from "@angular/material/input";
     TopMedicosComponent,
     AtencionGeneroComponent,
     TopPacientesComponent,
+    RegistroComponent,
+    FormularioRegistroComponent,
   ],
   imports: [
     CommonModule,
@@ -62,6 +67,10 @@ import { MatInputModule } from "@angular/material/input";
     NgxChartsModule,
     MatProgressBarModule,
     MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatRadioModule,
+    MatSelectModule,
   ],
 })
 export class HomeModule {}

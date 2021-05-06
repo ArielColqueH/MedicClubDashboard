@@ -2,6 +2,12 @@
 .p-2 {
   padding: 2rem;
 }
+.px-3 {
+  padding: 0 3rem;
+}
+.pr-3 {
+  padding-right: 3rem;
+}
 //MARGINS
 .mt-1 {
   margin-top: 1rem;
@@ -48,6 +54,9 @@
 .mr-5 {
   margin-right: 5rem;
 }
+.my-3 {
+  margin: 3rem 0rem;
+}
 .u-display-flex {
   // background-color: red;
   display: flex;
@@ -58,6 +67,7 @@
 }
 .u-1-of-2 {
   flex: 0 1 50%;
+  //background-color: red;
 }
 .u-1-of-3 {
   flex: 0 1 33.3%;
@@ -67,4 +77,9 @@
   justify-content: space-between;
   align-items: center;
   //background-color: red;
+}
+.u-display--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
