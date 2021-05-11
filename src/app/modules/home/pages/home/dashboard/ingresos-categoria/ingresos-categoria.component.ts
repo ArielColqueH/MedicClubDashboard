@@ -2,16 +2,18 @@ import { Component, OnInit, NgModule, Input } from "@angular/core";
 import {} from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { IncomeByCategory } from "src/app/core/http/models/income-by-category";
 import { IncomeByMonth } from "src/app/core/http/models/income-by-month";
+import { MostImportantDoctors } from "src/app/core/http/models/most-important-doctors";
 import { DashboardService } from "src/app/core/http/services/dashboard.service";
-import { single } from "./data";
+
 @Component({
   selector: "app-ingresos-categoria",
   templateUrl: "./ingresos-categoria.component.html",
   styleUrls: ["./ingresos-categoria.component.scss"],
 })
 export class IngresosCategoriaComponent implements OnInit {
-  single: IncomeByMonth[];
+  single = [];
 
   view: any[] = [300, 400];
 
@@ -28,21 +30,22 @@ export class IngresosCategoriaComponent implements OnInit {
     domain: ["#19D3DA"],
   };
 
-  constructor(private service: DashboardService) {
-    Object.assign(this, { single });
-  }
+  constructor(private service: DashboardService) {}
   ngOnInit() {
-    this.ObtenerDatos();
+    this.ObtenerIngresoPorCategorias();
   }
 
   onSelect(event) {
     console.log(event);
   }
 
-  ObtenerDatos() {
-    this.service
-      .ingresoPorCategorias()
-      .subscribe((data) => (this.single = data));
-    //this.aux = this.listaEspecialidades;
+  ObtenerIngresoPorCategorias() {
+    this.service.ingresoPorCategorias().subscribe((data) => {
+      this.single = data.data.map((datos) => ({
+        name: datos.category,
+        value: datos.amount,
+      }));
+      //console.log(this.single);
+    });
   }
 }

@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Doctor } from "src/app/core/http/models/doctor";
 import { IngresosCategoria } from "src/app/core/http/models/ingresoscategoria";
+import { MostImportantDoctors } from "src/app/core/http/models/most-important-doctors";
 import { Patient } from "src/app/core/http/models/patient";
+import { DashboardService } from "src/app/core/http/services/dashboard.service";
 
 @Component({
   selector: "app-dashboard",
@@ -10,7 +12,8 @@ import { Patient } from "src/app/core/http/models/patient";
 })
 export class DashboardComponent implements OnInit {
   itemci: any;
-  constructor() {}
+  doctoresImportantes: MostImportantDoctors[];
+  constructor(private service: DashboardService) {}
 
   numero: number = 4;
   impCategory: IngresosCategoria[] = [
@@ -68,58 +71,16 @@ export class DashboardComponent implements OnInit {
     },
   ];
 
-  doctor: Doctor[] = [
-    {
-      image:
-        "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      first_name: "Juan",
-      last_name: "Fernandez",
-      specialty: "Dermatologo",
-      stars: 4.55,
-      patients: 55,
-      percentage_appointments: 80.2,
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      first_name: "Joaquin",
-      last_name: "Gutierrez",
-      specialty: "Neumologo",
-      stars: 4.55,
-      patients: 55,
-      percentage_appointments: 85.5,
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlb3BsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      first_name: "Erwin",
-      last_name: "Alejo",
-      specialty: "Cardiologo",
-      stars: 3.55,
-      patients: 56,
-      percentage_appointments: 96.5,
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fHBlb3BsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      first_name: "Ximena",
-      last_name: "Cruz",
-      specialty: "Odontologa",
-      stars: 4.8,
-      patients: 89,
-      percentage_appointments: 78.5,
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1492546662075-aabebf46dee2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fHBlb3BsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      first_name: "Silvana",
-      last_name: "Muñoz",
-      specialty: "Pediatria",
-      stars: 4.05,
-      patients: 65,
-      percentage_appointments: 86.7,
-    },
-  ];
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.ObtenerDoctoresMasImportantes();
+  }
+  onSelect(event) {
+    console.log(event);
+  }
+  ObtenerDoctoresMasImportantes() {
+    this.service.doctorMasImportantes().subscribe((data) => {
+      this.doctoresImportantes = data.data;
+      console.log(this.doctoresImportantes);
+    });
+  }
 }

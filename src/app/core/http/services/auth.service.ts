@@ -12,14 +12,6 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) {}
   public login(usuario: User): Observable<any> {
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     "access-control-expose-headers": "x-total-count",
-    //   }),
-    //   observe: "response" as "response",
-    // };
-    return this.httpClient.post(this.authURL + "login", usuario, {
-      observe: "response",
-    });
+    return this.httpClient.post(this.authURL + "login", usuario);
   }
 }

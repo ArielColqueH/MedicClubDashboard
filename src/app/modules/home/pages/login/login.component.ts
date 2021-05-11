@@ -7,6 +7,7 @@ import {
   FormGroup,
   Validators,
 } from "@angular/forms";
+import { Router } from "@angular/router";
 import { User } from "src/app/core/http/models/user";
 import { AuthService } from "src/app/core/http/services/auth.service";
 import { TokenService } from "src/app/core/http/services/token.service";
@@ -18,7 +19,6 @@ import { TokenService } from "src/app/core/http/services/token.service";
 })
 export class LoginComponent implements OnInit {
   isLogged = false;
-  isLoggedFail = false;
   user: User;
   logotipo: string = "assets/images/logo.png";
   logo_big: string = "assets/images/login_img.svg";
@@ -38,13 +38,13 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private tokenService: TokenService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit() {
     if (this.tokenService.getToken()) {
       this.isLogged = true;
-      this.isLoggedFail = false;
     }
     this.formVar = this.fb.group({
       email: this.correoFormControl,
@@ -56,15 +56,15 @@ export class LoginComponent implements OnInit {
     // this.user = this.formVar;
     this.authService.login(this.user2).subscribe(
       (data) => {
-        // this.isLogged = true;
-        // this.isLoggedFail = false;
-        //this.tokenService.setToken(data);
+        this.isLogged = true;
+        this.tokenService.setToken(data.JWT);
         console.log("estas logeado!");
-        console.log(data);
+        if (this.isLogged) {
+          this.router.navigate(["/dashboard"]);
+        }
       },
       (err) => {
         this.isLogged = false;
-        this.isLoggedFail = true;
         this.errMjs = err.error.mensaje;
         console.log(this.errMjs);
       }

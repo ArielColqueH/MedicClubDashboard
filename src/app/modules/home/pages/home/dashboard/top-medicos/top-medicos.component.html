@@ -1,20 +1,25 @@
 <div class="doctores-concurridos">
   <div
     class="doctores-concurridos__img"
-    [ngStyle]="{ 'background-image': 'url(' + datadoctor.image + ')' }"
+    [ngStyle]="{
+      'background-image':
+        'url(' +
+        'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' +
+        ')'
+    }"
   ></div>
   <div class="doctores-concurridos__nombre">
-    {{ datadoctor.first_name }} {{ datadoctor.last_name }}
+    {{ datadoctor.name }}
   </div>
   <div class="doctores-concurridos__especialidad">
-    {{ datadoctor.specialty }}
+    {{ datadoctor.category }}
   </div>
   <div class="doctores-concurridos__puntuacion">
     <div class="doctores-concurridos__puntuacion--icon">
       <mat-icon>star</mat-icon>
     </div>
     <div class="doctores-concurridos__puntuacion--texto">
-      {{ datadoctor.stars }}
+      {{ datadoctor.score }}
     </div>
   </div>
   <div class="doctores-concurridos__pacientes">
@@ -22,18 +27,18 @@
       <mat-icon>people</mat-icon>
     </div>
     <div class="doctores-concurridos__pacientes--texto">
-      {{ datadoctor.patients }}
+      {{ datadoctor.totalPatients }}
     </div>
   </div>
   <div class="doctores-concurridos__citas-atendidas">
     <div class="doctores-concurridos__citas-atendidas--barra">
       <mat-progress-bar
         mode="determinate"
-        value="{{ datadoctor.percentage_appointments }}"
+        value="{{ datadoctor.percentageAppointments }}"
       ></mat-progress-bar>
     </div>
     <div class="doctores-concurridos__citas-atendidas--texto">
-      {{ datadoctor.percentage_appointments }} %
+      {{ datadoctor.percentageAppointments }} %
     </div>
   </div>
 </div>
