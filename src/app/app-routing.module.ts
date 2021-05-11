@@ -8,7 +8,7 @@ import { RegistroComponent } from "./modules/home/pages/home/registro/registro.c
 import { LoginComponent } from "./modules/home/pages/login/login.component";
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "/registro" },
+  { path: "", pathMatch: "full", redirectTo: "/dashboard" },
   {
     path: "login",
     component: LoginComponent,

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Doctor } from "src/app/core/http/class/doctor";
-import { IngresosCategoria } from "src/app/core/http/class/ingresoscategoria";
-import { Patient } from "src/app/core/http/class/patient";
+import { Doctor } from "src/app/core/http/models/doctor";
+import { IngresosCategoria } from "src/app/core/http/models/ingresoscategoria";
+import { Patient } from "src/app/core/http/models/patient";
 
 @Component({
   selector: "app-dashboard",

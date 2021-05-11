@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Doctor } from "src/app/core/http/class/doctor";
+import { Doctor } from "src/app/core/http/models/doctor";
 
 @Component({
   selector: "app-top-medicos",

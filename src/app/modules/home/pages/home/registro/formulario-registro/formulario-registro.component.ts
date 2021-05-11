@@ -5,7 +5,7 @@ import {
   FormGroup,
   Validators,
 } from "@angular/forms";
-import { Specialty } from "src/app/core/http/class/specialties";
+import { Specialty } from "src/app/core/http/models/specialties";
 
 @Component({
   selector: "app-formulario-registro",
