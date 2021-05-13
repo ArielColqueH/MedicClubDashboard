@@ -13,7 +13,7 @@ import { DashboardService } from "src/app/core/http/services/dashboard.service";
   styleUrls: ["./ingresos-categoria.component.scss"],
 })
 export class IngresosCategoriaComponent implements OnInit {
-  single = [];
+  single: IncomeByCategory[];
 
   view: any[] = [300, 400];
 

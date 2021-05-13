@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { MostImportantCategories } from "src/app/core/http/models/most-important-categories";
 
 @Component({
   selector: "app-categorias-importantes",
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from "@angular/core";
   styleUrls: ["./categorias-importantes.component.scss"],
 })
 export class CategoriasImportantesComponent implements OnInit {
-  @Input() dataci;
+  @Input() dataci: MostImportantCategories;
   constructor() {}
 
   ngOnInit() {}

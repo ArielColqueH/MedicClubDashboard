@@ -1,17 +1,22 @@
 <div class="pacientes-concurridos">
   <div
     class="pacientes-concurridos__img"
-    [ngStyle]="{ 'background-image': 'url(' + datapatient.image + ')' }"
+    [ngStyle]="{
+      'background-image':
+        'url(' +
+        'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80' +
+        ')'
+    }"
   ></div>
   <div class="pacientes-concurridos__nombre">
-    {{ datapatient.first_name }} {{ datapatient.last_name }}
+    {{ datapatient.name }}
   </div>
   <div class="pacientes-concurridos__citas">
     <div class="pacientes-concurridos__citas--icono">
       <mat-icon>edit</mat-icon>
     </div>
     <div class="pacientes-concurridos__citas--texto">
-      {{ datapatient.appointments }}
+      {{ datapatient.totalAppointmentsCreated }}
     </div>
   </div>
 </div>

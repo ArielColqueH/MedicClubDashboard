@@ -1,12 +1,13 @@
 import { Component, OnInit } from "@angular/core";
-import { single } from "./data";
+import { AttendanceByGender } from "src/app/core/http/models/AttendanceByGender";
+import { DashboardService } from "src/app/core/http/services/dashboard.service";
 @Component({
   selector: "app-atencion-genero",
   templateUrl: "./atencion-genero.component.html",
   styleUrls: ["./atencion-genero.component.scss"],
 })
 export class AtencionGeneroComponent implements OnInit {
-  single: any[];
+  single: AttendanceByGender[];
   view: any[] = [700, 400];
 
   // options
@@ -19,10 +20,10 @@ export class AtencionGeneroComponent implements OnInit {
   colorScheme = {
     domain: ["#19D3DA", "#B7F9FC"],
   };
-  ngOnInit() {}
-  constructor() {
-    Object.assign(this, { single });
+  ngOnInit() {
+    //this.ObtenerAtencionPorGenero();
   }
+  constructor(private service: DashboardService) {}
 
   onSelect(data): void {
     console.log("Item clicked", JSON.parse(JSON.stringify(data)));
@@ -34,5 +35,14 @@ export class AtencionGeneroComponent implements OnInit {
 
   onDeactivate(data): void {
     console.log("Deactivate", JSON.parse(JSON.stringify(data)));
+  }
+
+  ObtenerAtencionPorGenero() {
+    this.service.atencionPorGenero().subscribe((data) => {
+      this.single = data.data.map((datos) => ({
+        name: datos.gender,
+        value: datos.percentage,
+      }));
+    });
   }
 }

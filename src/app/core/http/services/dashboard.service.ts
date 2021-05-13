@@ -27,5 +27,32 @@ export class DashboardService {
       headers,
     });
   }
+
+  public pacientesMasImportantes(): Observable<any> {
+    const headers = { Authorization: "Bearer " + this.token };
+    return this.httpClient.get<any>(
+      this.authURL + "top_most_attended_patients",
+      {
+        headers,
+      }
+    );
+  }
+
+  public atencionPorGenero(): Observable<any> {
+    const headers = { Authorization: "Bearer " + this.token };
+    return this.httpClient.get<any>(this.authURL + "attendance_by_gender", {
+      headers,
+    });
+  }
+
+  public categoriasMasImportantes(): Observable<any> {
+    const headers = { Authorization: "Bearer " + this.token };
+    return this.httpClient.get<any>(
+      this.authURL + "most_important_categories",
+      {
+        headers,
+      }
+    );
+  }
 }
 //

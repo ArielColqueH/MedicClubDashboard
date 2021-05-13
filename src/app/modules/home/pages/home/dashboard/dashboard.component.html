@@ -24,7 +24,7 @@
   <p class="graphic-container__title my-2">Categorias mas importantes</p>
   <div class="u-flex--space-between mb-3">
     <app-categorias-importantes
-      *ngFor="let itemci of impCategory"
+      *ngFor="let itemci of categoriasImportantes"
       [dataci]="itemci"
     ></app-categorias-importantes>
   </div>
@@ -73,7 +73,7 @@
           <div class="category-important-title__citas">Citas</div>
         </div>
         <app-top-pacientes
-          *ngFor="let itempatient of patients"
+          *ngFor="let itempatient of pacientesImportantes"
           [datapatient]="itempatient"
         ></app-top-pacientes>
       </div>
