@@ -21,7 +21,7 @@ export class AtencionGeneroComponent implements OnInit {
     domain: ["#19D3DA", "#B7F9FC"],
   };
   ngOnInit() {
-    //this.ObtenerAtencionPorGenero();
+    this.ObtenerAtencionPorGenero();
   }
   constructor(private service: DashboardService) {}
 

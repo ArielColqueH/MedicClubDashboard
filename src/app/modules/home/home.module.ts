@@ -2,7 +2,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HeaderComponent } from "./../../layout/header/header.component";
 import { FooterComponent } from "./../../layout/footer/footer.component";
-import { DialogsComponent } from "./../../modules/dialogs/dialogs.component";
 import { LoginComponent } from "./../../modules/home/pages/login/login.component";
 import { LayoutComponent } from "./../../layout/layout.component";
 import { MainComponent } from "./../../layout/main/main.component";
@@ -32,12 +31,16 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatSelectModule } from "@angular/material/select";
 import { HomeComponent } from "./pages/home/home.component";
 import { FormularioRegistroComponent } from "./pages/home/registro/formulario-registro/formulario-registro.component";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatDialogModule } from "@angular/material/dialog";
+import { FailComponent } from "src/app/dialogs/alerts/fail/fail.component";
+import { SuccesfulComponent } from "src/app/dialogs/alerts/succesful/succesful.component";
+
 @NgModule({
   declarations: [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    DialogsComponent,
     LoginComponent,
     LayoutComponent,
     MainComponent,
@@ -52,6 +55,8 @@ import { FormularioRegistroComponent } from "./pages/home/registro/formulario-re
     TopPacientesComponent,
     RegistroComponent,
     FormularioRegistroComponent,
+    FailComponent,
+    SuccesfulComponent,
   ],
   imports: [
     CommonModule,
@@ -70,6 +75,8 @@ import { FormularioRegistroComponent } from "./pages/home/registro/formulario-re
     ReactiveFormsModule,
     MatRadioModule,
     MatSelectModule,
+    MatMenuModule,
+    MatDialogModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

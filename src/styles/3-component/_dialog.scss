@@ -1,0 +1,12 @@
+.dialog {
+  &__title {
+    font-family: Roboto;
+    font-size: 2rem;
+    color: $color-primary;
+  }
+  &__message {
+    font-family: Lato;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem !important;
+  }
+}

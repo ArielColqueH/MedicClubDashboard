@@ -1,6 +1,14 @@
 <mat-toolbar class="header">
   <span class="header__title">Dashboard</span>
-  <button mat-mini-fab class="circular-button--profile">
+  <button
+    mat-mini-fab
+    class="circular-button--profile"
+    [matMenuTriggerFor]="menu"
+  >
     <span class="circular-button__letter">A</span>
   </button>
 </mat-toolbar>
+<!-- Display menu 1 -->
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="salir()">Salir</button>
+</mat-menu>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material";
+import { FailComponent } from "src/app/dialogs/alerts/fail/fail.component";
 
 @Component({
   selector: "app-registro",
