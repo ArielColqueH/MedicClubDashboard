@@ -1,10 +1,9 @@
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HeaderComponent } from "./../../layout/header/header.component";
 import { FooterComponent } from "./../../layout/footer/footer.component";
 import { DialogsComponent } from "./../../modules/dialogs/dialogs.component";
 import { LoginComponent } from "./../../modules/home/pages/login/login.component";
-import { HomeComponent } from "./../../modules/home/pages/home/home.component";
 import { LayoutComponent } from "./../../layout/layout.component";
 import { MainComponent } from "./../../layout/main/main.component";
 import { SidenavComponent } from "./../../layout/sidenav/sidenav.component";
@@ -28,11 +27,11 @@ import { TopPacientesComponent } from "./pages/home/dashboard/top-pacientes/top-
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatInputModule } from "@angular/material/input";
 import { RegistroComponent } from "./pages/home/registro/registro.component";
-import { FormularioRegistroComponent } from "./pages/home/registro/formulario-registro/formulario-registro.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatRadioModule } from "@angular/material/radio";
 import { MatSelectModule } from "@angular/material/select";
-
+import { HomeComponent } from "./pages/home/home.component";
+import { FormularioRegistroComponent } from "./pages/home/registro/formulario-registro/formulario-registro.component";
 @NgModule({
   declarations: [
     HomeComponent,
@@ -72,5 +71,6 @@ import { MatSelectModule } from "@angular/material/select";
     MatRadioModule,
     MatSelectModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomeModule {}

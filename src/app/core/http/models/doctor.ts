@@ -1,9 +1,8 @@
 export class Doctor {
-  image: string;
+  email: string;
+  password: string;
   first_name: string;
   last_name: string;
-  specialty: string;
-  stars: number;
-  patients: number;
-  percentage_appointments: number;
+  id_specialty: string;
+  score: string;
 }
