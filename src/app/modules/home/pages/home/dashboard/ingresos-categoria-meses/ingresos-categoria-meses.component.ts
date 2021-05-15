@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { multi } from "./data";
+import { DashboardService } from "src/app/core/http/services/dashboard.service";
+//import { multi } from "./data";
 
 @Component({
   selector: "app-ingresos-categoria-meses",
@@ -25,10 +26,12 @@ export class IngresosCategoriaMesesComponent implements OnInit {
     domain: ["#3B28CC", "#2667FF", "#3F8EFC", "#87BFFF", "#A594F9"],
   };
 
-  constructor() {
-    Object.assign(this, { multi });
+  constructor(private service: DashboardService) {
+    //Object.assign(this, { multi });
   }
-  ngOnInit() {}
+  ngOnInit() {
+    this.ObtenerIngresosCategoriasPorMes();
+  }
 
   onSelect(data): void {
     console.log("Item clicked", JSON.parse(JSON.stringify(data)));
@@ -40,5 +43,18 @@ export class IngresosCategoriaMesesComponent implements OnInit {
 
   onDeactivate(data): void {
     console.log("Deactivate", JSON.parse(JSON.stringify(data)));
+  }
+
+  ObtenerIngresosCategoriasPorMes() {
+    this.service.ingresoPorCategoriasPorMes().subscribe((data) => {
+      console.log(data);
+      this.multi = data.data.map((datos) => ({
+        name: datos.category,
+        series: datos.incomeByMonths.map((data2) => ({
+          name: data2.month,
+          value: data2.amount,
+        })),
+      }));
+    });
   }
 }

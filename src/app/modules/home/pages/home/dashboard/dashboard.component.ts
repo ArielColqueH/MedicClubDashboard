@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
   ObtenerDoctoresMasImportantes() {
     this.service.doctorMasImportantes().subscribe((data) => {
       this.doctoresImportantes = data.data;
-      //console.log(this.doctoresImportantes);
+      console.log(this.doctoresImportantes);
     });
   }
 

@@ -54,5 +54,12 @@ export class DashboardService {
       }
     );
   }
+
+  public ingresoPorCategoriasPorMes(): Observable<any> {
+    const headers = { Authorization: "Bearer " + this.token };
+    return this.httpClient.get<any>(this.authURL + "income_category_month", {
+      headers,
+    });
+  }
 }
 //

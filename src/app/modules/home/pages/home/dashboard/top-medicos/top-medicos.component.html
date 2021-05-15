@@ -34,11 +34,20 @@
     <div class="doctores-concurridos__citas-atendidas--barra">
       <mat-progress-bar
         mode="determinate"
-        value="{{ datadoctor.percentageAppointments }}"
+        value="{{
+          datadoctor.percentageAppointments <= 100
+            ? datadoctor.percentageAppointments
+            : 0
+        }}"
       ></mat-progress-bar>
     </div>
     <div class="doctores-concurridos__citas-atendidas--texto">
-      {{ datadoctor.percentageAppointments }} %
+      {{
+        datadoctor.percentageAppointments <= 100
+          ? datadoctor.percentageAppointments
+          : 0
+      }}
+      %
     </div>
   </div>
 </div>
