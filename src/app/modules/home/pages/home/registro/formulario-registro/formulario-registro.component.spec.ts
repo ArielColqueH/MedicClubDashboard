@@ -23,3 +23,4 @@ describe('FormularioRegistroComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
